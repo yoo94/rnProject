@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint --ext .tsx --ext .ts ./src --fix",
+    "format": "prettier --check ./src",
     "ios:clean": "cd ios && rm -rf Pods && pod cache clean --all && arch -x86_64 pod install && cd ..",
     "gradlew": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "aos:clean": "cd android && ./gradlew clean && cd ..",
