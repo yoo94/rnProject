@@ -11,6 +11,7 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:import/recommended',
     ],
     globals: {
         Atomics: 'readonly',
@@ -27,6 +28,7 @@ module.exports = {
     },
     plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
     rules: {
+        'import/order': ['error', { alphabetize: { order: 'asc', caseInsensitive: true } }],
         indent: ['error', 2, { SwitchCase: 1 }],
         'linebreak-style': ['error', 'unix'],
         quotes: ['error', 'single', { avoidEscape: true }],
