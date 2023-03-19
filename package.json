@@ -8,11 +8,12 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint --ext .tsx --ext .ts ./src --fix",
-    "format": "prettier --check ./src",
+    "format": "prettier --check ./src --write",
     "ios:clean": "cd ios && rm -rf Pods && pod cache clean --all && arch -x86_64 pod install && cd ..",
     "gradlew": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "aos:clean": "cd android && ./gradlew clean && cd ..",
-    "pod": "cd ios && arch -x86_64 pod install --repo-update && cd .."
+    "pod": "cd ios && arch -x86_64 pod install --repo-update && cd ..",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "18.0.0",
@@ -31,6 +32,7 @@
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.70.3",
     "prettier": "^2.8.4",
