@@ -15,8 +15,8 @@ HAS_ERROR=""
 
 for file in $(git diff --cached --name-only | sort | uniq); do
 	file_size=$(du -m $CURRENT_DIR/$file | awk '{print $1}')
-	if [ "$file_size" -ge 10 ]; then
-		echo "$file is over 10MB."
+	if [ "$file_size" -ge 5 ]; then
+		echo "$file is over 5MB."
 		HAS_ERROR="1"
 	fi
 done
