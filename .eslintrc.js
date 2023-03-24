@@ -28,7 +28,11 @@ module.exports = {
     },
     plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
     rules: {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
         'import/order': ['error', { alphabetize: { order: 'asc', caseInsensitive: true } }],
+        "@typescript-eslint/no-unsafe-member-access": "error",
+        "@typescript-eslint/no-unsafe-assignment": "error",
         indent: ['error', 2, { SwitchCase: 1 }],
         'linebreak-style': ['error', 'unix'],
         quotes: ['error', 'single', { avoidEscape: true }],
@@ -44,5 +48,6 @@ module.exports = {
         react: {
             version: 'detect',
         },
+        'import/ignore': ['react-native'],
     },
 };

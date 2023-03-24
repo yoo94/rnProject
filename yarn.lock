@@ -6508,7 +6508,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.8.1":
+"prop-types@^15.5.10", "prop-types@^15.6.0", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -6595,7 +6595,21 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.7.tgz"
   "version" "0.0.7"
 
-"react-native@*", "react-native@0.69.5":
+"react-native-search-bar@^3.5.1":
+  "integrity" "sha512-L+y2gQZstApb2DavE8se6Mzj3CgxZiHxM0DezAdT4kb6+kV4+WeTN8jPxvrP6zgwbGcjuYKaHrASKnBmhuWmhA=="
+  "resolved" "https://registry.npmjs.org/react-native-search-bar/-/react-native-search-bar-3.5.1.tgz"
+  "version" "3.5.1"
+  dependencies:
+    "prop-types" "^15.5.10"
+
+"react-native-search-input@^0.0.6":
+  "integrity" "sha512-vUuwYRX8SLtN2PEnwhDp3HM7Fq1BzvfqvBukirRFLK5HlRGwvDNFtcaCStCemPRXX/0FdBMnFFw/aCSEG+6RhA=="
+  "resolved" "https://registry.npmjs.org/react-native-search-input/-/react-native-search-input-0.0.6.tgz"
+  "version" "0.0.6"
+  dependencies:
+    "prop-types" "^15.6.0"
+
+"react-native@*", "react-native@>=0.40", "react-native@0.69.5":
   "integrity" "sha512-4Psrj1nDMLQjBXVH8n3UikzOHQc8+sa6NbxZQR0XKtpx8uC3HiJBgX+/FIum/RWxfi5J/Dt/+A2gLGmq2Hps8g=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.69.5.tgz"
   "version" "0.69.5"
@@ -6656,7 +6670,7 @@
     "react-shallow-renderer" "^16.13.1"
     "scheduler" "^0.21.0"
 
-"react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@18.0.0":
+"react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@>=15.1 || >=16.0.0", "react@18.0.0":
   "integrity" "sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.0.0.tgz"
   "version" "18.0.0"
