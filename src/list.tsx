@@ -1,39 +1,70 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, Button, View, FlatList, Text, TextInput } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Button,
+  View,
+  FlatList,
+  Text,
+  TextInput,
+  Alert,
+  ScrollView,
+} from 'react-native';
 // import SearchBar from 'react-native-search-bar';
 import Data from './data.json';
 
 const TextInputExample = () => {
-  const updateList = () => {};
-
-  type ItemProps = { title: string };
-
-  const Item = ({ title }: ItemProps) => (
-    <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
-    </View>
-  );
+  // const searchData = (text: string) => {
+  //   Alert.alert(text);
+  // };
 
   return (
     <View style={{ flex: 1 }}>
       <View>
         <SafeAreaView style={styles.buttons}>
-          <Button title="전체보기" color="#9C27B0" onPress={updateList} />
-          <Button title="서비스" color="#9C27B0" onPress={updateList} />
-          <Button title="어플" color="#9C27B0" onPress={updateList} />
-          <Button title="이용방법" color="#9C27B0" onPress={updateList} />
-          <Button title="고객센터" color="#9C27B0" onPress={updateList} />
-        </SafeAreaView>
-        <TextInput placeholder="검색어를 입력해라!" onChangeText={(text) => text} />
-      </View>
-      <View style={styles.container}>
-        <SafeAreaView style={styles.container}>
-          <FlatList
-            data={DATA}
-            renderItem={({ item }) => <Item title={item.title} />}
-            keyExtractor={(item) => item.id}
+          <Button
+            title="전체보기"
+            color="#9C27B0"
+            onPress={() => filterItems('전체보기')}
+          />
+          <Button
+            title="서비스"
+            color="#9C27B0"
+            onPress={() => filterItems('서비스')}
+          />
+          <Button
+            title="어플"
+            color="#9C27B0"
+            onPress={() => filterItems('어플')}
+          />
+          <Button
+            title="이용방법"
+            color="#9C27B0"
+            onPress={() => filterItems('이용방법')}
+          />
+          <Button
+            title="고객센터"
+            color="#9C27B0"
+            onPress={() => filterItems('고객센터')}
           />
         </SafeAreaView>
+        <TextInput
+          placeholder="검색어를 입력해라!"
+          onChangeText={(text: string) => filterItems(text)}
+        />
+      </View>
+      <View style={styles.container}>
+        <ScrollView>
+          {DATA.map((item, index) => {
+            return (
+              <View key={index} style={styles.container}>
+                <View>
+                  <Text style={styles.item}>{item.title}</Text>
+                </View>
+              </View>
+            );
+          })}
+        </ScrollView>
       </View>
     </View>
   );
