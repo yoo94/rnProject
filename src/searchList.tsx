@@ -7,12 +7,14 @@ import {
   SafeAreaView,
   Button,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 
 const TextInputExample = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
 
+  //fetchapi
   useEffect(() => {
     void fetchData('http://localhost:8081/src/data.json');
     console.log(data);
@@ -46,6 +48,9 @@ const TextInputExample = () => {
       setFilteredData(data);
     }
   };
+  const onItemPress = (item: any) => {
+    console.log(item);
+  };
   return (
     <View style={{ flex: 1 }}>
       <View>
@@ -53,7 +58,7 @@ const TextInputExample = () => {
           <Button
             title="전체보기"
             color="#9C27B0"
-            onPress={() => searchFilterFunction()}
+            onPress={() => searchFilterFunction}
           />
           <Button
             title="서비스"
@@ -89,8 +94,12 @@ const TextInputExample = () => {
           return (
             <View key={index}>
               <Text>{item.id}</Text>
-              <Text>{item.title}</Text>
-              <Text>{item.content}</Text>
+              <TouchableOpacity
+                style={styles.item}
+                onPress={() => onItemPress(item.content)}
+              >
+                <Text>{item.title}</Text>
+              </TouchableOpacity>
             </View>
           );
         })}
