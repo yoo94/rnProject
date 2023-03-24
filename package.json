@@ -7,8 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint --ext .tsx --ext .ts --ext .js ./src --fix",
-    "format": "prettier --check ./src --write",
+    "lint": "eslint --ext .tsx --ext .ts --ext .js --ext .json --fix",
+    "format": "prettier --check --write",
     "ios:clean": "cd ios && rm -rf Pods && pod cache clean --all && arch -x86_64 pod install && cd ..",
     "gradlew": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "aos:clean": "cd android && ./gradlew clean && cd ..",
@@ -23,8 +23,12 @@
     }
   },
   "dependencies": {
+    "lodash.filter": "^4.6.0",
     "react": "18.0.0",
-    "react-native": "0.69.5"
+    "react-native": "0.69.5",
+    "react-native-search-bar": "^3.5.1",
+    "react-native-search-filter": "^0.1.5",
+    "react-native-search-input": "^0.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -32,6 +36,7 @@
     "@react-native-community/eslint-config": "^2.0.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^26.0.23",
+    "@types/lodash.filter": "^4.6.7",
     "@types/react-native": "^0.69.5",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
